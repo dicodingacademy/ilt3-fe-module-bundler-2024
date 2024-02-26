@@ -1,0 +1,173 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.form-group > input {
+  padding: 12px 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+
+  font-size: 1em;
+
+  transition: all 100ms linear;
+}
+
+form button {
+  padding: 12px 20px;
+  background-color: #2d3e50;
+
+  font-size: 1em;
+  color: white;
+  border: none;
+
+  border-radius: 4px;
+
+  transition: all 100ms linear;
+}
+
+form button:focus-visible,
+form input:focus-visible {
+  box-shadow: 0 0 0 4px #17255455;
+
+  outline: none;
+}
+
+/* HEADER */
+header {
+  background-color: #2d3e50;
+
+  box-shadow: 0 2px 8px 0 #000000aa;
+}
+
+header .header-content {
+  padding: 48px 16px;
+
+  color: white;
+}
+
+header .header-content a {
+  color: white;
+}
+
+header .brand-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+}
+
+header .brand-container .brand-name {
+  font-size: 1.7em;
+
+  text-decoration: none;
+}
+/* END OF HEADER */
+
+/* MAIN */
+main {
+  padding-block: 64px;
+}
+
+.search-bar-container {
+  margin-block: 0 24px;
+}
+
+.form-group {
+  display: flex;
+  gap: 8px;
+}
+
+.search-bar-container .form-group > input {
+  flex-grow: 1;
+}
+
+.users-list {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+
+  gap: 30px 20px;
+}
+
+.user-item {
+  display: flex;
+  flex-direction: row;
+
+  box-shadow: 0 2px 4px 2px #00000055;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.user-item .user-item__image img {
+  width: 200px;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.user-item > .user-item__description {
+  flex-grow: 1;
+
+  padding: 16px;
+  font-size: 16px;
+}
+
+.user-item > .user-item__description > * + * {
+  margin-top: 8px;
+}
+
+.user-item > .user-item__description .user-item__description-name {
+  font-size: 32px;
+  font-weight: bold;
+}
+/* END OF MAIN */
+
+@media (hover: hover) {
+  button:hover {
+    cursor: pointer;
+  }
+
+  .search-bar-container .form-group > button:hover {
+    background-color: #172554;
+  }
+}
+
+@media (min-width: 800px) {
+  .container {
+    max-width: 1000px;
+  }
+
+  .users-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .user-item {
+    flex-direction: column;
+
+    padding: 16px;
+
+    text-align: center;
+  }
+
+  .user-item .user-item__image img {
+    width: 200px;
+    height: 200px;
+
+    border-radius: 9999px;
+  }
+}
