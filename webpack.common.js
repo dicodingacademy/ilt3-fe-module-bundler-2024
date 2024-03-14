@@ -10,7 +10,7 @@ require('dotenv').config({
 });
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/scripts/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
   },
@@ -24,13 +24,10 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify(process.env),
+      'process.env.GITHUB_TOKEN': JSON.stringify(process.env.GITHUB_TOKEN),
     }),
 
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: './index.html',
-    }),
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -38,6 +35,10 @@ module.exports = {
           to: './',
         },
       ],
+    }),
+
+    new HtmlWebpackPlugin({
+      template: './index.html',
     }),
   ],
 };
