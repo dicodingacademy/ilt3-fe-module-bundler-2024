@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub User App</title>
+
+    <link rel="stylesheet" href="src/styles/styles.css" />
+
+    <script defer type="module" src="src/scripts/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a class="brand-container" href="/">
+            <img src="src/public/github-logo.png" alt="User Logo" width="50" />
+            <span class="brand-name">GitHub Users App</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div id="search-bar-container" class="search-bar-container">
+          <form>
+            <div class="form-group">
+              <input type="search" id="search" name="search" />
+              <button>Cari</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="users-list" class="users-list"></div>
+      </div>
+    </main>
+  </body>
+</html>
